@@ -1,0 +1,13 @@
+# 🛠 Capítulo 09 – Mantenimiento y Respaldo
+
+## 💾 Copias de seguridad
+...
+
+## 🧩 Automatización (opcional)
+...
+
+## 👁 Revisión periódica
+...
+
+## 🚀 Ideas para monitoreo futuro
+...

@@ -1,0 +1,13 @@
+# ☁️ Capítulo 08 – Despliegue en la Nube
+
+## 🌍 Crear instancia GCP
+...
+
+## 🔐 Firewall y acceso
+...
+
+## 📂 Transferencia de archivos
+...
+
+## ✅ Verificación del sitio
+...
