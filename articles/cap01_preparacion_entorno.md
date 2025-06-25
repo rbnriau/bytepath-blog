@@ -157,7 +157,7 @@ rubenrv@1-bytepath:~$
 ```
 
 
-1. Eliminar acceso al servidor con contraseña.  
+4. Eliminar acceso al servidor con contraseña.  
 
 ```bash
 rubenrv@1-bytepath:~$ sudo nano /etc/ssh/sshd_config
