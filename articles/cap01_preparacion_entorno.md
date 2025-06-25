@@ -73,7 +73,7 @@ Usaré un mini-PC para el entorno de pruebas, una vez todo funciones correctamen
 
 La instalación del sistema se realizó desde un USB, con Debian 12 sin entorno de escritorio. Una vez completada, lo primero fue poner el entorno en marcha:
 
-1. Actualización inicial del sistema.
+- Actualización inicial del sistema.
 ```bash
 root@1-bytepath:~# apt update
 root@1-bytepath:~# apt upgrade
@@ -81,21 +81,21 @@ root@1-bytepath:~# apt upgrade
    
 
 
-2. Instalación de sudo y adición del usuario rubenrv al grupo de administradores:
+- Instalación de sudo y adición del usuario rubenrv al grupo de administradores:
 
 ```bash
 root@1-bytepath:~# apt install sudo
 root@1-bytepath:~# usermod -aG sudo rubenrv
 ```
 
-3. Tras reiniciar, verifiqué con id rubenrv que el cambio se aplicó correctamente.
+- Tras reiniciar, verifiqué con id rubenrv que el cambio se aplicó correctamente.
 ```bash
 root@1-bytepath:~# id rubenrv
 uid=1000(rubenrv) gid=1000(rubenrv) grupos=1000(rubenrv),24(cdrom),25(floppy),27(sudo)...
 ```
 
 
-4. Luego instalé el servidor SSH (openssh-server) y comprobé que estuviera activo y funcionando.
+- Luego instalé el servidor SSH (openssh-server) y comprobé que estuviera activo y funcionando.
 
 ```bash
 rubenrv@1-bytepath:~$ sudo apt install ssh-server
@@ -122,7 +122,7 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
 
 Una vez verificado que el servicio SSH está activo y permite conexiones, es momento de reforzar la seguridad del sistema. Para ello, configuraremos el acceso únicamente mediante clave pública y desactivaremos el acceso por contraseña.
 
-1. Generar clave SSH (desde el cliente)  
+- Generar clave SSH (desde el cliente)  
 
  ```bash
  rubenrv@debian:~$ ssh-keygen -t ed25519 -C "rubenrv@bytepath"
@@ -132,7 +132,7 @@ Una vez verificado que el servicio SSH está activo y permite conexiones, es mom
 >📌 -C "rubenrv@bytepath": es un comentario opcional para ayudar a identificar la clave.  
 >📌 Este comando creará dos archivos, la clave privada que no se compartirá nunca y la pública que copiaremos en el servidor.
 
-1. Copiar la clave pública en el servidor  
+- Copiar la clave pública en el servidor  
 
 ```bash
 rubenrv@debian:~$ ssh-copy-id rubenrv@192.168.8.150
@@ -140,7 +140,7 @@ rubenrv@debian:~$ ssh-copy-id rubenrv@192.168.8.150
 
 Esto creará el archivo ~/.ssh/authorized_keys en el servidor (si no existe) y añadirá la clave pública.  
 
-1. Comprobar el acceso con la clave y sin pass.
+- Comprobar el acceso con la clave y sin pass.
      
 ```bash
 rubenrv@debian:~$ ssh rubenrv@192.168.8.150
@@ -157,7 +157,7 @@ rubenrv@1-bytepath:~$
 ```
 
 
-1. Eliminar acceso al servidor con contraseña.  
+- Eliminar acceso al servidor con contraseña.  
 
 ```bash
 rubenrv@1-bytepath:~$ sudo nano /etc/ssh/sshd_config
