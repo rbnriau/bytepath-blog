@@ -132,7 +132,7 @@ Una vez verificado que el servicio SSH está activo y permite conexiones, es mom
 >📌 -C "rubenrv@bytepath": es un comentario opcional para ayudar a identificar la clave.  
 >📌 Este comando creará dos archivos, la clave privada que no se compartirá nunca y la pública que copiaremos en el servidor.
 
-2. Copiar la clave pública en el servidor  
+1. Copiar la clave pública en el servidor  
 
 ```bash
 rubenrv@debian:~$ ssh-copy-id rubenrv@192.168.8.150
@@ -140,7 +140,7 @@ rubenrv@debian:~$ ssh-copy-id rubenrv@192.168.8.150
 
 Esto creará el archivo ~/.ssh/authorized_keys en el servidor (si no existe) y añadirá la clave pública.  
 
-3. Comprobar el acceso con la clave y sin pass.
+1. Comprobar el acceso con la clave y sin pass.
      
 ```bash
 rubenrv@debian:~$ ssh rubenrv@192.168.8.150
@@ -157,7 +157,7 @@ rubenrv@1-bytepath:~$
 ```
 
 
-4. Eliminar acceso al servidor con contraseña.  
+1. Eliminar acceso al servidor con contraseña.  
 
 ```bash
 rubenrv@1-bytepath:~$ sudo nano /etc/ssh/sshd_config
