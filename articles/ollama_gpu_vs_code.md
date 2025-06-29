@@ -1,10 +1,10 @@
-# 🤖 Integrar Ollama y Modelos LLM en VS Code (con GPU AMD)
+# Integrar Ollama y Modelos LLM en VS Code (con GPU AMD)
 
 En la era actual de la inteligencia artificial, integrar grandes modelos de lenguaje (LLM) directamente en el entorno de desarrollo es una capacidad cada vez más deseada. Herramientas como Ollama permiten ejecutar estos modelos de forma local, aprovechando la potencia de nuestras GPU. Sin embargo, la implementación de esta solución no siempre es un camino de rosas, especialmente cuando se trabaja con hardware AMD y distribuciones Linux específicas. Este artículo documenta los desafíos encontrados al intentar integrar Ollama y un LLM para asistencia en la codificación en VS Code, utilizando una GPU AMD Radeon RX Vega 56, en dos entornos Linux diferentes: Debian 12 y Manjaro Live USB.
 
 ---
 
-### 🐧 Intento 1: Debian 12
+### Intento 1: Debian 12
 
 El primer intento se centró en la distribución principal: Debian 12 "Bookworm". La instalación de Ollama en Debian es teóricamente sencilla, siguiendo los pasos oficiales.
 
@@ -28,7 +28,7 @@ Durante la ejecución de `ollama run llama3`, el proceso fallaba con errores rel
 
 ---
 
-### 💻 Intento 2: Manjaro Live USB
+### Intento 2: Manjaro Live USB
 
 Dada la necesidad de un *stack* ROCm más reciente, se decidió probar un entorno Linux de tipo "rolling release", como Manjaro, conocido por sus paquetes actualizados. El objetivo era verificar si la GPU funcionaría correctamente con Ollama en un Live USB antes de considerar una instalación permanente.
 
@@ -58,7 +58,7 @@ Este comportamiento, aparentemente contradictorio, es común en los entornos Liv
 
 ---
 
-### 📚 Lecciones Aprendidas y Reflexión Final
+### Reflexión Final
 
 Esta serie de intentos para integrar Ollama con una GPU AMD en Linux reveló varias lecciones clave:
 
@@ -68,9 +68,9 @@ Esta serie de intentos para integrar Ollama con una GPU AMD en Linux reveló var
 
 ---
 
-### 🔜 Próximo Intento: Instalación persistente en USB
+### Próximo Intento: Instalación persistente en USB
 
-Como siguiente paso, se planifica realizar una **instalación completa y persistente de Manjaro (o una distribución similar) directamente en el pendrive USB de 32 GB**, en lugar de usar un entorno Live USB. Esta configuración permitirá un sistema funcional con persistencia total de datos, gestión completa del espacio en disco y acceso nativo a los drivers y frameworks necesarios, facilitando la instalación y uso de Ollama con soporte para GPU AMD. Este intento se documentará en detalle una vez realizado.
+Como siguiente paso, se planifica realizar una **instalación completa y persistente de Manjaro (o una distribución similar) directamente en el pendrive USB de 32 GB**, en lugar de usar un entorno Live USB. Esta configuración permitirá un sistema funcional con persistencia total de datos, gestión completa del espacio en disco y acceso nativo a los drivers y frameworks necesarios, facilitando la instalación y uso de Ollama con soporte para GPU AMD. Este intento se documentará en detalle una vez realizado.(como adelanto, con éste tercer intento se consigió integrar un modelo en VSCode y se llego a probar como asistente en codificación html y css ).
 
 ---
 
