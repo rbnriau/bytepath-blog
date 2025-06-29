@@ -1,6 +1,6 @@
-# 🛡 Capítulo 02 – Seguridad Básica
+# Capítulo 02 – Seguridad Básica
 
-## 🧭 Introducción a la Seguridad en Servidores Web
+## Introducción a la Seguridad en Servidores Web
 
  Cuando se trata de configurar un servidor web, la seguridad es uno de los aspectos más importantes a considerar. Un servidor web expuesto a internet puede ser vulnerable a diversos tipos de ataques, como intrusiones, denegación de servicio, robo de información, entre otros. Por lo tanto, es crucial implementar medidas de seguridad sólidas desde el inicio para proteger nuestra infraestructura y los datos que aloja.
  
@@ -13,7 +13,7 @@
  En este capítulo, nos enfocaremos en la instalación y configuración de UFW(Uncomplicated Firewall) que nos ayudará a establecer reglas de seguridad básica para el servidor web.
  
 ## UFW
-### 🔧 Instalación de UFW
+### Instalación de UFW
 
 Actualizamos el sistema con *sudo apt update* e instalamos ufw.
 
@@ -38,7 +38,7 @@ Y podemos comprobar que el puerto 22 está escuchando mi conexión.
 ![netstat](../imagenes/A1C2N05.png)
 
 
-### 📋 Reglas mínimas 
+### Reglas mínimas 
 
 Es el momento de configura unas reglas mínimas. Permitiré el acceso remoto ssh, que ya configuramos para que solo permita conectarse con mi clave privada,  permitiremos el 80 para HTTP y 443 para HTTPS.
 
@@ -53,7 +53,7 @@ Con netstat podemos ver los puertos abiertos actualmente.
 
 
 
-### 🔍 Verificación del estado
+### Verificación del estado
 
 Estado general de firewall
 
@@ -63,9 +63,9 @@ Reglas específicas
 
 ![reglas añadidas](../imagenes/A1C2N09.png)
 
-## 🔐 Fail2ban  
+## Fail2ban  
 
-### 🧭 Introducción a Fail2ban
+### Introducción a Fail2ban
 
 Fail2ban es una herramienta que actúa como sistema de detección y prevención de intrusiones protegiendo nuestro servidor  contra:
 
@@ -73,30 +73,30 @@ Fail2ban es una herramienta que actúa como sistema de detección y prevención 
 2. Scans maliciosos.
 3. Intentos de explotación de vulnerabilidades.
 
-### 🔧 Instalación básica
+### Instalación básica
 
 ![Instalación de Fail2ban](../imagenes/A1C2N10.png)
 ![Activación de Fail2ban](../imagenes/A1C2N11.png)
 
 
-### 🛠 Configuración personalizada
+### Configuración personalizada
 
 Este paso es importante hacerlo para que cuando se actualice Fail2ban no se sobreescriba nuestra configuración. Creando el fichero jail.local, fail2ban tendrá preferencia por eta configuración en lugar de jail.conf
-- 📌 Tuve problemas porque no tuve en cuenta que Debian 12 no guarda los log de ssh como espera fail2ban que sería en /var/log/auth.log sino que Debian usa systemd-journald como sistema de logs por defecto. Esto provocaba errores y hay que configurarlo especialmente tal como mostraré en las siguientes secciones.
+- Tuve problemas porque no tuve en cuenta que Debian 12 no guarda los log de ssh como espera fail2ban que sería en /var/log/auth.log sino que Debian usa systemd-journald como sistema de logs por defecto. Esto provocaba errores y hay que configurarlo especialmente tal como mostraré en las siguientes secciones.
 
 
 ![Crear nuevo archivo jail.local](../imagenes/A1C2N12.png)
 
 Aquí lo personalizamos para SSH, podemos crear nuevas Jails para otros servicios como apache2.
 
-### ▶️ Habilitar y arrancar el servicio
+### Habilitar y arrancar el servicio
 
 ![Habilitar Fail2ban](../imagenes/A1C2N13.png)
 
 
 
 
-### 🔍 Verificar que la jail sshd está activa
+### Verificar que la jail sshd está activa
 
 ![jail activas](../imagenes/A1C2N14.png)
 
@@ -130,15 +130,15 @@ Crearé tres jails para apache en mi archivo jail.local.
 
 ![Estado Fail2ban](../imagenes/A1C2N17.png)
 
-### 🔍 Monitorización y gestión
+### Monitorización y gestión
 
-1. 🔐 Monitoreo básico de UFW
+1. Monitoreo básico de UFW
 2. 
    ![Puertos abiertos](../imagenes/A1C2N18.png)
    ![Jail activas](../imagenes/A1C2N19.png)
    
 
-### � Pruebas de funcionamiento
+### Pruebas de funcionamiento
 
 Tengo una  maquina virtual Kali que usaré para intentar loguearme repetidas veces hasta que Fail2ban la bloquee. Con esto comprobaremos que no pueden hacer intentos indefinidos de logeo a mi servidor.
 
@@ -157,36 +157,36 @@ Sobre la protección a Apache2, de momento no voy a hacer más pruebas porque ai
  ![Configuración apache](../imagenes/A1C2N23.png)
 
 
-## 🧠 Notas para producción
+## Notas para producción
 
-📌 Cuando migre el servidor web a la nube debería cambiar el puerto 22 por defecto para ssh por otro.
-📌 Debo recordar que GCP tiene su propio firewal, deberé informarme a fondo de esto pues podría bloquearme sin querer.
-❗En entornos Cloud añadir mi IP pública a **ignoreip** y configurar optimizaciones.
-📌 De momento no he configurado Apache para generar tráfico cifrado HTTPS
+Cuando migre el servidor web a la nube debería cambiar el puerto 22 por defecto para ssh por otro.
+Debo recordar que GCP tiene su propio firewal, deberé informarme a fondo de esto pues podría bloquearme sin querer.
+En entornos Cloud añadir mi IP pública a **ignoreip** y configurar optimizaciones.
+De momento no he configurado Apache para generar tráfico cifrado HTTPS
  
 
-## ✅ Cierre del capítulo
+## Cierre del capítulo
 
-📌 **Resumen rápido**
+**Resumen rápido**
 - Implementamos UFW como cortafuegos básico para el servidor.
 - Configuramos reglas mínimas de seguridad (SSH, HTTP, HTTPS).
 - Verificamos el estado del firewall y puertos abiertos.
 - Aprendimos sobre consideraciones clave para entornos de producción.
 - Instalamos y configuramos Fail2ban y comprobamos su funcionamiento.
 
-🔧 **Estado actual del entorno**
+**Estado actual del entorno**
 El servidor ahora tiene:
-- 🔐 Firewall básico activado (UFW) con puertos esenciales abiertos.
-- 🕵️ Fail2ban instalado y configurado.
-- 🔐 SSH configurado solo con autenticación por clave pública.
-- 🌐 Servicios web (HTTP/HTTPS) accesibles pero protegidos.
+- Firewall básico activado (UFW) con puertos esenciales abiertos.
+- Fail2ban instalado y configurado.
+- SSH configurado solo con autenticación por clave pública.
+- Servicios web (HTTP/HTTPS) accesibles pero protegidos.
 
 
-🚀 **¿Y ahora qué?**
+**¿Y ahora qué?**
 En el próximo capítulo nos enfocaremos en la configuración de apache2.
 
 
-💬 **Bitácora del viajero**
+**Bitácora del viajero**
 > *"La seguridad no es un producto, sino un proceso. Hoy hemos puesto los primeros cimientos de un servidor resistente, pero el camino continúa. Como dijo Bruce Schneier: 'La seguridad es siempre una compensación entre conveniencia y protección'. Encontremos ese equilibrio."
 
 
