@@ -1,6 +1,6 @@
-# 📘 Capítulo 01 – Preparación del Entorno
+# Capítulo 01 – Preparación del Entorno
 
-## 🗂 Estructura del directorio del proyecto local
+## Estructura del directorio del proyecto local
 
 
 ```plaintext
@@ -33,7 +33,7 @@ Servidor_Byte_Path/
 
 
 
-> 📌 En principio preparé esta estructura para organizarme mejor ya que se usan capturas de pantalla que hay que redimensionar y optimizar a webp, algunos scripts para automatizar algunas tareas y pensando en que segun aumentasen los articulos y archivos podría ser dificil encontrar muchas cosas. Esta estructura la usé al principio en mi entorno local, luego hice algunas pruebas en un servidor web Apache2 en Debian 12, instalados en un mini pc con bajos recursos con el que cuento en casa, así iba ensayando y probando el despliegue de la web en ese servidor. En este servidor ya no usé algunas carpetas, me centré en las que se utilizaban exclusivamente para la web. Más adelante me atreví con un servidor privado virtual en OVHCloud. En este punto había decidido optimizar el rendimiento de la web usando muy pocas imágenes, exclusivamente las portadas de cada capítulo, alguna miniatura y logo con lo que se simplificó aun más la estructura del directorio en /var/www/bytepath . Simplemente colgaban del directorio raiz los archivos html y css con una carpeta para imágenes de portadas (con sus dimensiones para diseño responsivo). 
+> En principio preparé esta estructura para organizarme mejor ya que se usan capturas de pantalla que hay que redimensionar y optimizar a webp, algunos scripts para automatizar algunas tareas y pensando en que segun aumentasen los articulos y archivos podría ser dificil encontrar muchas cosas. Esta estructura la usé al principio en mi entorno local, luego hice algunas pruebas en un servidor web Apache2 en Debian 12, instalados en un mini pc con bajos recursos con el que cuento en casa, así iba ensayando y probando el despliegue de la web en ese servidor. En este servidor ya no usé algunas carpetas, me centré en las que se utilizaban exclusivamente para la web. Más adelante me atreví con un servidor privado virtual en OVHCloud. En este punto había decidido optimizar el rendimiento de la web usando muy pocas imágenes, exclusivamente las portadas de cada capítulo, alguna miniatura y logo con lo que se simplificó aun más la estructura del directorio en /var/www/bytepath . Simplemente colgaban del directorio raiz los archivos html y css con una carpeta para imágenes de portadas (con sus dimensiones para diseño responsivo). 
 ```plaintext
 bytepath
 │   ├── README.md
@@ -64,10 +64,10 @@ bytepath
 ├── crear_copia_seguridad.sh
 ......
 ```
-> 📌 Cuento con un script para redimensionar y convertir las portadas y otro para realizar copias comprimidas manualmente.
+> Cuento con un script para redimensionar y convertir las portadas y otro para realizar copias comprimidas manualmente.
 Trabajar con SSHFS, montando este directorio en un directorio local y poder usar cualquier herramienta gráfica para editar archivos que están en un servidor web remoto sin entorno de escritorio me ha facilitado mucho el trabajo. En el momento de editar esta parte estoy descubriendo Github y seguramente termine adaptándome a otros flujos de trabajo más abiertos a colaboraciones y trabajo en equipo.
 
-## 🖥 Instalación de Debian 12  
+## Instalación de Debian 12  
 
 Usaré un mini-PC para el entorno de pruebas, una vez todo funciones correctamente se migrará a una instancia virtual en la nube, GCP o AWS.
 
@@ -110,7 +110,7 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
 
 
 
-## 👤 Usuario, hostname y red
+## Usuario, hostname y red
 
 **Hostname:** 1-bytepath  
 **Usuario:** rubenrv  
@@ -118,7 +118,7 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
 **Red Local** 192.168.8.0/24  
 
 
-## 🔐 Acceso remoto con SSH
+## Acceso remoto con SSH
 
 Una vez verificado que el servicio SSH está activo y permite conexiones, es momento de reforzar la seguridad del sistema. Para ello, configuraremos el acceso únicamente mediante clave pública y desactivaremos el acceso por contraseña.
 
@@ -128,9 +128,9 @@ Una vez verificado que el servicio SSH está activo y permite conexiones, es mom
  rubenrv@debian:~$ ssh-keygen -t ed25519 -C "rubenrv@bytepath"
  ```
 
->📌 -t ed25519: indica que se usará el algoritmo de clave ed25519.  
->📌 -C "rubenrv@bytepath": es un comentario opcional para ayudar a identificar la clave.  
->📌 Este comando creará dos archivos, la clave privada que no se compartirá nunca y la pública que copiaremos en el servidor.
+> -t ed25519: indica que se usará el algoritmo de clave ed25519.  
+> -C "rubenrv@bytepath": es un comentario opcional para ayudar a identificar la clave.  
+> Este comando creará dos archivos, la clave privada que no se compartirá nunca y la pública que copiaremos en el servidor.
 
 - Copiar la clave pública en el servidor  
 
@@ -195,7 +195,7 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
        Docs: man:sshd(8)
 .....
 ```
-> 📌 **Nota:**  
+> **Nota:**  
 > En Debian y derivados, el servicio del servidor SSH se llama `ssh`.  
 > Sin embargo, `sshd` también funciona como alias y ambos comandos reinician el servicio correctamente:  
 > 
@@ -208,34 +208,34 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
 
 
 
-## 📦 Paquetes básicos
+## Paquetes básicos
 
 Una vez completada la instalación de Debian 12 y configurado el usuario principal, se procede a instalar una serie de herramientas esenciales que facilitarán la administración del servidor y prepararán el entorno para tareas futuras. Algunas herramientas ya se han utilizado antes como **sudo** u **openssh-server**.  
 
 
-### 🔹 Actualización del sistema
+### Actualización del sistema
 
 ```bash
 rubenrv@1-bytepath:~$ sudo apt update && sudo apt upgrade -y
 ```
 
-### 🔹 Paquetes de administración
+### Paquetes de administración
 
 ```bash
 rubenrv@1-bytepath:~$ sudo apt install sudo net-tools curl wget htop bash-completion
 ```
-> 📌 **sudo:** para otorgar permisos administrativos.  
-> 📌 **net-tools:** utilidades como ifconfig.  
-> 📌 **curl y wget:** herramientas para descargar archivos desde la terminal.
-> 📌 **htop:** monitor interactivo de procesos.  
-> 📌 **bash-completion:** autocompletado útil en terminal. 
-> 📌 **lm-sensors:** útil para monitorear la salud del equipo.  
-> 📌 **fancontrol:** permite controlar la velocidad de los ventiladores.  
-> 📌 **strace:** rastrea las llamadas al sistema realizadas por un proceso.  
+> **sudo:** para otorgar permisos administrativos.  
+> **net-tools:** utilidades como ifconfig.  
+> **curl y wget:** herramientas para descargar archivos desde la terminal.
+> **htop:** monitor interactivo de procesos.  
+> **bash-completion:** autocompletado útil en terminal. 
+> **lm-sensors:** útil para monitorear la salud del equipo.  
+> **fancontrol:** permite controlar la velocidad de los ventiladores.  
+> **strace:** rastrea las llamadas al sistema realizadas por un proceso.  
 
 
 
-### 🔹 Acceso remoto por SSH
+### Acceso remoto por SSH
 
 ```bash
 rubenrv@1-bytepath:~$sudo apt install openssh-server
@@ -244,7 +244,7 @@ rubenrv@1-bytepath:~$sudo systemctl start ssh
 rubenrv@1-bytepath:~$sudo systemctl status ssh  
 ```
 
-### 🔹 Servidor web Apache (instalación)
+### Servidor web Apache (instalación)
 
 ```bash
 rubenrv@1-bytepath:~$sudo apt install apache2
@@ -252,20 +252,20 @@ rubenrv@1-bytepath:~$sudo apt install apache2
 La configuración del servidor web se tratará en el **Capitulo 03-Servidor Web Apache.  
 
 
-## ✅ Cierre del capítulo
+## Cierre del capítulo
 
-📌 **Resumen rápido**  
+**Resumen rápido**  
 - Instalación mínima de Debian 12 sin entorno gráfico.  
 - Configuración de acceso remoto vía SSH con autenticación con clave.  
 - Estructuración del entorno de trabajo y directorios del proyecto.  
 - Instalación de herramientas administrativas básicas para monitorización y gestión del sistema.  
 
 
-🔧 **Estado actual del entorno**  
+**Estado actual del entorno**  
 El servidor local está operativo, accesible por SSH, con un entorno organizado y preparado para comenzar con la configuración de seguridad.  
 
 
-🚀 **¿Y ahora qué?**  
+**¿Y ahora qué?**  
 En el próximo capítulo se abordarán las medidas básicas de protección como configurar cortafuegos.
   
 
