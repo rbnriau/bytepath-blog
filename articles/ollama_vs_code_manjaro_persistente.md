@@ -55,7 +55,7 @@ Este tercer intento validó que es completamente viable ejecutar **Ollama + LLM 
 
 ### Próximos Pasos
 
-Con Ollama ya operativo, el siguiente paso será evaluar sus capacidades en tareas concretas: generación de código, sugerencias, refactorización ligera y análisis sintáctico, midiendo su utilidad real en proyectos web (HTML/CSS/JS).
+Con Ollama y el modelo llama3 ya operativos, el siguiente paso será evaluar sus capacidades en tareas concretas: generación de código, sugerencias, refactorización ligera y análisis sintáctico, midiendo su utilidad real en proyectos web (HTML/CSS/JS).
 
 Además, se plantea explorar otros modelos más ligeros o específicos (como `codegemma` o `starcoder`) y refinar la instalación para que funcione desde SSD o incluso contenedor portátil.
 
