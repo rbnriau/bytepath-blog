@@ -106,7 +106,7 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
 ......
 ```
 
-> 💡 Todo listo para administrar el sistema de forma remota.
+> Todo listo para administrar el sistema de forma remota.
 
 
 
