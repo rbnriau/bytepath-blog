@@ -12,6 +12,11 @@ Al instalar Rocky 10 sin entorno de escritorio, en largas sesiones de trabajo o 
 ---
 
 ## Comandos usados
+```bash
+setfont solar24x32.psfu.gz # Para probar fuentes
+sudo nano /etc/vconsole.conf # Editar el archivo vconsole.conf
+sudo dracut -f && sudo reboot # Configurar la fuente elegida por defecto
+```
 
 ## Ruta a las fuentes de consola
 
@@ -30,6 +35,7 @@ setfont solar24x32.psfu.gz
 Una vez que hemos decidido la fuente y su tamaño podemos asignarla por defecto en nuestro sistema editando el archivo /etc/vconsole.conf
 
 ![vconsoleconf](/img/vconsoleconf.webp)
+> El nombre simple, sin extensiones
 
 Tras guardar los cambios ejecutamos:
 ```bash
