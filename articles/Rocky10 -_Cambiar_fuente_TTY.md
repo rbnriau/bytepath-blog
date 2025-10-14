@@ -29,7 +29,7 @@ setfont solar24x32.psfu.gz
 
 Una vez que hemos decidido la fuente y su tamaño podemos asignarla por defecto en nuestro sistema editando el archivo /etc/vconsole.conf
 
-![vconsoleconf](img/vconsoleconf.webp)
+![vconsoleconf](/img/vconsoleconf.webp)
 
 Tras guardar los cambios ejecutamos:
 ```bash
