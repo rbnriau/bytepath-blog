@@ -18,5 +18,5 @@ Aquí encontrarás artículos, apuntes y documentación sobre redes, sistemas, a
 
 - [Prueba con Ollama GPU + VSCode](articles/ollama_gpu_vs_code.md)
 - [VSCode persistente con Ollama en Manjaro](articles/ollama_vs_code_manjaro_persistente.md)
-- [Rocky 10 - Cambiar las fuentes de la consola TTY](articles/Rocky10-_Cambiar_fuente_TTY.md)
+- [Rocky 10 Cambiar las fuentes de la consola TTY](articles/rocky10_cambiar_fuentes.md)
 
