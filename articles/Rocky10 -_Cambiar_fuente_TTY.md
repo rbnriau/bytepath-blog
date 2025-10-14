@@ -28,14 +28,12 @@ setfont solar24x32.psfu.gz
 > No es necesario poner la ruta completa
 
 Una vez que hemos decidido la fuente y su tamaño podemos asignarla por defecto en nuestro sistema editando el archivo /etc/vconsole.conf
-![vconsole.conf](/img/vconsole.conf)
+
+![vconsole.conf][/img/vconsoleconf.webp]
 
 Tras guardar los cambios ejecutamos:
 ```bash
 sudo dracut -f && sudo reboot
 ```
 Cuando se reinicie el sistema ya estará asignada por defecto la fuente seleccionada
-
-
-
 
