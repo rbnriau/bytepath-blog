@@ -14,7 +14,8 @@ Al instalar Rocky 10 sin entorno de escritorio, en largas sesiones de trabajo o 
 ## Ruta a las consolas
 
 En sistemas derivados de RHEL, la localización de las fuentes de la consola es diferente que en los sistemas basados en Debian.
-Las podemos ver en formato commprimido en /usr/lib/kbd/consolefonts/
+Las podemos ver en formato comprimido en /usr/lib/kbd/consolefonts/
+![listado de consolefonts] (/img/rocky-fontconsole)
 
 ## ⚙️ Comandos usados
 ```bash
