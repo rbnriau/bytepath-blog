@@ -1,15 +1,16 @@
 # EL COMANDO SCP
 **Fecha:** 2025-10-24  
-**Tema:** 
-Transferencia segura de archivos con el comando scp
+**Tema:** Transferencia segura de archivos con el comando scp
+
 ---
 
 ## Descripción rápida
 
 Útil para transferir archivos entre maquinas virtuales que no tienen carpeta compartida o portapapeles activado. 
+
 ---
 
-## ⚙️ Comandos usados
+## Comandos usados
 ```bash
 ip a # Para conocer la ip de la máquina virtual receptora.
 sudo scp # Transferencia segura
@@ -27,7 +28,7 @@ $ ip a
 ```
 Desde la máquina de la que queremos enviar los archivos ejecutamos:
 ```bash
-sudo scp path_del_archivo_a_enviar usuario@ip_receptor:path_donde_guardar_el_archivo
+$ sudo scp path_del_archivo_a_enviar usuario@ip_receptor:path_donde_guardar_el_archivo
 ```
 Se nos pedirá la pass del usuario remoto.
 Si es la primera vez nos aparecerá un mensaje que debemos aceptar:
