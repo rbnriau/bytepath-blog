@@ -1,4 +1,4 @@
-*Resumen del flujo entre la creación de un archivo localmente hasta subirlo a GitHub
+# Resumen del flujo entre la creación de un archivo localmente hasta subirlo a GitHub
 - Antes de usar los comandos git debe añadirse la clave SSH al agente (una vez por sesion).
 - Si la clave tiene contraseña, deberá introducirse aqui una sola vez.
 - Crear y guardar el archivo en el directorio original del proyecto en local.
@@ -26,7 +26,7 @@
  
  ---
  
- **Ejemplo de uso
+##Ejemplo de uso
  ´´´bash
  ssh-add ~/.ssh/[id dela clave] # Una vez por sessión
  cd [path al directorio local del repositorio]
