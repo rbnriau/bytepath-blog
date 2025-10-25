@@ -103,7 +103,7 @@ uid=1000(rubenrv) gid=1000(rubenrv) grupos=1000(rubenrv),24(cdrom),25(floppy),27
 ```bash
 rubenrv@1-bytepath:~$ sudo apt install ssh-server
 rubenrv@1-bytepath:~$ sudo systemctl status ssh
-● ssh.service - OpenBSD Secure Shell server
+ssh.service - OpenBSD Secure Shell server
      Loaded: loaded (/lib/systemd/system/ssh.service; enabled; preset: enabled)
      Active: active (running) since Wed 2025-06-25 23:25:44 CEST; 14min ago
 ......
