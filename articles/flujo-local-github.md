@@ -22,7 +22,7 @@ ssh-add ~/.ssh/[id de la clave]
  ---
  Gracias a la autenticación SSH todo funciona sin pedir usuario/contraseña.
  
- ** Ventajas de la configuración actual.
+## Ventajas de la configuración actual.
  
  - **Seguridad** : Uso de claves SSH en lugar de contraseñas.
  - **Comodidad** : Gnome gestiona el agente SSH, solo se debe añadir la clave al agente al iniciar sesion en la terminal
@@ -30,7 +30,7 @@ ssh-add ~/.ssh/[id de la clave]
  
  ---
  
-##Ejemplo de uso
+## Ejemplo de uso
 ```bash
  ssh-add ~/.ssh/[id dela clave] # Una vez por sessión
  cd [path al directorio local del repositorio]
