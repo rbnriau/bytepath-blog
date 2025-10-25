@@ -33,7 +33,8 @@ Servidor_Byte_Path/
 
 
 
-> En principio preparé esta estructura para organizarme mejor ya que se usan capturas de pantalla que hay que redimensionar y optimizar a webp, algunos scripts para automatizar algunas tareas y pensando en que segun aumentasen los articulos y archivos podría ser dificil encontrar muchas cosas. Esta estructura la usé al principio en mi entorno local, luego hice algunas pruebas en un servidor web Apache2 en Debian 12, instalados en un mini pc con bajos recursos con el que cuento en casa, así iba ensayando y probando el despliegue de la web en ese servidor. En este servidor ya no usé algunas carpetas, me centré en las que se utilizaban exclusivamente para la web. Más adelante me atreví con un servidor privado virtual en OVHCloud. En este punto había decidido optimizar el rendimiento de la web usando muy pocas imágenes, exclusivamente las portadas de cada capítulo, alguna miniatura y logo con lo que se simplificó aun más la estructura del directorio en /var/www/bytepath . Simplemente colgaban del directorio raiz los archivos html y css con una carpeta para imágenes de portadas (con sus dimensiones para diseño responsivo).
+> **Nota:** 
+En principio preparé esta estructura para organizarme mejor ya que se usan capturas de pantalla que hay que redimensionar y optimizar a webp, algunos scripts para automatizar algunas tareas y pensando en que segun aumentasen los articulos y archivos podría ser dificil encontrar muchas cosas. Esta estructura la usé al principio en mi entorno local, luego hice algunas pruebas en un servidor web Apache2 en Debian 12, instalados en un mini pc con bajos recursos con el que cuento en casa, así iba ensayando y probando el despliegue de la web en ese servidor. En este servidor ya no usé algunas carpetas, me centré en las que se utilizaban exclusivamente para la web. Más adelante me atreví con un servidor privado virtual en OVHCloud. En este punto había decidido optimizar el rendimiento de la web usando muy pocas imágenes, exclusivamente las portadas de cada capítulo, alguna miniatura y logo con lo que se simplificó aun más la estructura del directorio en /var/www/bytepath . Simplemente colgaban del directorio raiz los archivos html y css con una carpeta para imágenes de portadas (con sus dimensiones para diseño responsivo).
 
 ```plaintext
 bytepath
@@ -65,7 +66,8 @@ bytepath
 ├── crear_copia_seguridad.sh
 ......
 ```
-> Cuento con un script para redimensionar y convertir las portadas y otro para realizar copias comprimidas manualmente.
+> **Nota:** 
+Cuento con un script para redimensionar y convertir las portadas y otro para realizar copias comprimidas manualmente.
 Trabajar con SSHFS, montando este directorio en un directorio local y poder usar cualquier herramienta gráfica para editar archivos que están en un servidor web remoto sin entorno de escritorio me ha facilitado mucho el trabajo. En el momento de editar esta parte estoy descubriendo Github y seguramente termine adaptándome a otros flujos de trabajo más abiertos a colaboraciones y trabajo en equipo.
 
 ## Instalación de Debian 12  
@@ -199,12 +201,12 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
 > **Nota:**  
 > En Debian y derivados, el servicio del servidor SSH se llama `ssh`.  
 > Sin embargo, `sshd` también funciona como alias y ambos comandos reinician el servicio correctamente:  
-> 
-> ```bash
-> rubenrv@1-bytepath:~$ sudo systemctl restart ssh
-> rubenrv@1-bytepath:~$ sudo systemctl restart sshd
-> ```
-> 
+ 
+```bash
+rubenrv@1-bytepath:~$ sudo systemctl restart ssh
+rubenrv@1-bytepath:~$ sudo systemctl restart sshd
+```
+ 
 > Esto puede variar en otras distribuciones, donde `sshd` suele ser el nombre más común del servicio.
 
 
