@@ -8,11 +8,7 @@ Aquí encontrarás artículos, apuntes y documentación sobre redes, sistemas, a
 ## 🖥️ Guía del Proyecto BytePath
 
 - [Capítulo 01 – Preparación del entorno](articles/cap01_preparacion_entorno.md)
-- [Capítulo 02 – Seguridad básica](articles/cap02_seguridad_basica.md)
-- [Capítulo 03 – Servidor web con Apache](articles/cap03_servidor_web_apache.md)
-- [Capítulo 04 – Seguridad avanzada y logs](articles/cap04_seguridad_y_logs.md)
-- [Capítulo 05 – Despliegue en la nube](articles/cap05_despliegue_en_la_nube.md)
-- [Capítulo 06 – Mantenimiento y respaldo](articles/cap06_mantenimiento_y_respaldo.md)
+- 
 
 ## 🧪 Experimentos y pruebas
 

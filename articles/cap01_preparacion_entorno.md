@@ -115,33 +115,33 @@ ssh.service - OpenBSD Secure Shell server
 
 ## Usuario, hostname y red
 
-**Hostname:** 1-bytepath  
-**Usuario:** rubenrv  
-**IP:** 192.168.8.150/24  
-**Red Local** 192.168.8.0/24  
+**Hostname:** 1-bytepath 
+**Usuario:** rubenrv 
+**IP:** 192.168.8.150/24 
+**Red Local** 192.168.8.0/24 
 
 
 ## Acceso remoto con SSH
 
 Una vez verificado que el servicio SSH está activo y permite conexiones, es momento de reforzar la seguridad del sistema. Para ello, configuraremos el acceso únicamente mediante clave pública y desactivaremos el acceso por contraseña.
 
-- Generar clave SSH (desde el cliente)  
+- Generar clave SSH (desde el cliente) 
 
  ```bash
  rubenrv@debian:~$ ssh-keygen -t ed25519 -C "rubenrv@bytepath"
  ```
 
-> -t ed25519: indica que se usará el algoritmo de clave ed25519.  
-> -C "rubenrv@bytepath": es un comentario opcional para ayudar a identificar la clave.  
+> -t ed25519: indica que se usará el algoritmo de clave ed25519. 
+> -C "rubenrv@bytepath": es un comentario opcional para ayudar a identificar la clave. 
 > Este comando creará dos archivos, la clave privada que no se compartirá nunca y la pública que copiaremos en el servidor.
 
-- Copiar la clave pública en el servidor  
+- Copiar la clave pública en el servidor 
 
 ```bash
 rubenrv@debian:~$ ssh-copy-id rubenrv@192.168.8.150
 ```
 
-Esto creará el archivo ~/.ssh/authorized_keys en el servidor (si no existe) y añadirá la clave pública.  
+Esto creará el archivo ~/.ssh/authorized_keys en el servidor (si no existe) y añadirá la clave pública. 
 
 - Comprobar el acceso con la clave y sin pass.
      
@@ -160,7 +160,7 @@ rubenrv@1-bytepath:~$
 ```
 
 
-- Eliminar acceso al servidor con contraseña.  
+- Eliminar acceso al servidor con contraseña. 
 
 ```bash
 rubenrv@1-bytepath:~$ sudo nano /etc/ssh/sshd_config
@@ -185,7 +185,7 @@ PasswordAuthentication no  # <-- CAMBIAR DE 'yes' A 'no', O AÑADIR ESTA LÍNEA
 # [...] más configuraciones [...]
 ```
 
-Con esta configuración evitamos que se nadie pueda intentar conectarse con una pass. La única opción válida es usar el equipo qeu tenga la clave privada.  
+Con esta configuración evitamos que se nadie pueda intentar conectarse con una pass. La única opción válida es usar el equipo qeu tenga la clave privada. 
 
 Por último reiniciamos el servicio ssh y comprobamos el estado del servicio. 
 ```bash
@@ -198,9 +198,9 @@ rubenrv@1-bytepath:~$ sudo systemctl status ssh
        Docs: man:sshd(8)
 .....
 ```
-> **Nota:**  
-> En Debian y derivados, el servicio del servidor SSH se llama `ssh`.  
-> Sin embargo, `sshd` también funciona como alias y ambos comandos reinician el servicio correctamente:  
+> **Nota:** 
+> En Debian y derivados, el servicio del servidor SSH se llama `ssh`. 
+> Sin embargo, `sshd` también funciona como alias y ambos comandos reinician el servicio correctamente: 
  
 ```bash
 rubenrv@1-bytepath:~$ sudo systemctl restart ssh
@@ -213,7 +213,7 @@ rubenrv@1-bytepath:~$ sudo systemctl restart sshd
 
 ## Paquetes básicos
 
-Una vez completada la instalación de Debian 12 y configurado el usuario principal, se procede a instalar una serie de herramientas esenciales que facilitarán la administración del servidor y prepararán el entorno para tareas futuras. Algunas herramientas ya se han utilizado antes como **sudo** u **openssh-server**.  
+Una vez completada la instalación de Debian 12 y configurado el usuario principal, se procede a instalar una serie de herramientas esenciales que facilitarán la administración del servidor y prepararán el entorno para tareas futuras. Algunas herramientas ya se han utilizado antes como **sudo** u **openssh-server**. 
 
 
 ### Actualización del sistema
@@ -227,14 +227,14 @@ rubenrv@1-bytepath:~$ sudo apt update && sudo apt upgrade -y
 ```bash
 rubenrv@1-bytepath:~$ sudo apt install sudo net-tools curl wget htop bash-completion
 ```
-> **sudo:** para otorgar permisos administrativos.  
-> **net-tools:** utilidades como ifconfig.  
+> **sudo:** para otorgar permisos administrativos. 
+> **net-tools:** utilidades como ifconfig. 
 > **curl y wget:** herramientas para descargar archivos desde la terminal.
-> **htop:** monitor interactivo de procesos.  
+> **htop:** monitor interactivo de procesos. 
 > **bash-completion:** autocompletado útil en terminal. 
-> **lm-sensors:** útil para monitorear la salud del equipo.  
-> **fancontrol:** permite controlar la velocidad de los ventiladores.  
-> **strace:** rastrea las llamadas al sistema realizadas por un proceso.  
+> **lm-sensors:** útil para monitorear la salud del equipo. 
+> **fancontrol:** permite controlar la velocidad de los ventiladores. 
+> **strace:** rastrea las llamadas al sistema realizadas por un proceso. 
 
 
 
@@ -252,23 +252,22 @@ rubenrv@1-bytepath:~$sudo systemctl status ssh
 ```bash
 rubenrv@1-bytepath:~$sudo apt install apache2
 ```
-La configuración del servidor web se tratará en el **Capitulo 03-Servidor Web Apache.  
+La configuración del servidor web se tratará en el **Capitulo 03-Servidor Web Apache. 
 
 
 ## Cierre del capítulo
 
-**Resumen rápido**  
-- Instalación mínima de Debian 12 sin entorno gráfico.  
-- Configuración de acceso remoto vía SSH con autenticación con clave.  
-- Estructuración del entorno de trabajo y directorios del proyecto.  
-- Instalación de herramientas administrativas básicas para monitorización y gestión del sistema.  
+**Resumen rápido** 
+- Instalación mínima de Debian 12 sin entorno gráfico. 
+- Configuración de acceso remoto vía SSH con autenticación con clave. 
+- Estructuración del entorno de trabajo y directorios del proyecto. 
+- Instalación de herramientas administrativas básicas para monitorización y gestión del sistema. 
 
 
-**Estado actual del entorno**  
-El servidor local está operativo, accesible por SSH, con un entorno organizado y preparado para comenzar con la configuración de seguridad.  
+**Estado actual del entorno** 
+El servidor local está operativo, accesible por SSH, con un entorno organizado y preparado para comenzar con la configuración de seguridad. 
 
-
-**¿Y ahora qué?**  
+**¿Y ahora qué?** 
 En el próximo capítulo se abordarán las medidas básicas de protección como configurar cortafuegos.
   
 

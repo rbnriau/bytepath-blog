@@ -15,17 +15,25 @@
 ## UFW
 ### Instalación de UFW
 
-Actualizamos el sistema con *sudo apt update* e instalamos ufw.
+Actualizamos el sistema e instalamos ufw.
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install openssh-server
+```
+Antes de habilitar UFW debemos asegurarnos de que el puerto 22 esté abierto o corremos el riesgo de que el firewall deniegue nuestra actual conexión ssh, lo que nos dejaría sin posibilidad de acceder remotamene al equipo.
 
-![instalar ufw](../imagenes/A1C2N01.png)
-
+```bash
+sudo ufw allow 22/tcp
+sudo ufw status numbered
+```
 Habilitamos ufw
+```bash
+sudo ufw enable
+```
 
-![enable ufw]( ../imagenes/A1C2N02.png)
+Tal como nos advierte la salilda del comando, 
 
-Tal como nos advierte la salilda del comando, corremos el riesgo de que el firewall deniegue nuestra actual conexión ssh, lo que nos dejaría sin posibilidad de acceder remotamene al equipo.
 
-Antes de habilitarlo debemos asegurarnos de que el puerto 22 esté abierto.
 
 ![regla permitir ssh](../imagenes/A1C2N03.png)
 
