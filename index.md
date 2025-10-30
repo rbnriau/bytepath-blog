@@ -17,5 +17,6 @@ Aquí encontrarás artículos, apuntes y documentación sobre redes, sistemas, a
 - [Rocky 10 Cambiar las fuentes de la consola TTY](articles/rocky10_cambiar_fuentes.md)
 - [Comando scp](articles/comando_scp.md)
 - [Flujo local-GitHub](articles/flujo-local-github.md)
+- [Comando pv para comprimir](articles/pv_para_comprimir.md)
 
 
