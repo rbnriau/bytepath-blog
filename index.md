@@ -4,7 +4,7 @@
 
 - [Capítulo 01 – Preparación del entorno](articles/cap01_preparacion_entorno.md)
 
-## 🧪 Experimentos, pruebas y notas.
+## Experimentos, pruebas y notas.
 
 - [Prueba con Ollama GPU + VSCode](articles/ollama_gpu_vs_code.md)
 - [VSCode persistente con Ollama en Manjaro](articles/ollama_vs_code_manjaro_persistente.md)
