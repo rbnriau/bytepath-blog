@@ -1,4 +1,10 @@
 # Resumen del flujo entre la creación de un archivo localmente hasta subirlo a GitHub
+
+- Para verificar que todo está listo antes de empezar a trabajar
+```bash
+ ssh -T git@github.com
+ Hi [usuario]! You've succesfully authenticated...
+
 - Antes de usar los comandos git debe añadirse la clave SSH al agente (una vez por sesion).
 ```bash
 ssh-add ~/.ssh/[id de la clave privada]
@@ -14,10 +20,7 @@ ssh-add ~/.ssh/[id de la clave privada]
 
  ---
  
-- Para verificar que todo está listo antes de empezar a trabajar
-```bash
- ssh -T git@github.com
- Hi [usuario]! You've succesfully authenticated...
+
 ```
  ---
  Gracias a la autenticación SSH todo funciona sin pedir usuario/contraseña.
