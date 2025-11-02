@@ -12,5 +12,6 @@
 - [Comando scp](articles/comando_scp.md)
 - [Flujo local-GitHub](articles/flujo-local-github.md)
 - [Comando pv para comprimir](articles/pv_para_comprimir.md)
+- [Actualización remota de NextCloud](articles/actualizar_nextcloud)
 
 
