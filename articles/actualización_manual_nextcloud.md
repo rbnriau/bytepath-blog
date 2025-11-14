@@ -21,22 +21,31 @@ sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
 ```
 ## 3. Descargar nueva versión
 - Descargamos la versión ZIP desde el sitio oficial de Nextcloud a nuestro PC local.
-- Subimos el ZIP al servidor vía scp o SFTP.
+- Subimos el archivo comprimido al servidor vía scp o SFTP.
+```
+scp Descargas/nextcloud-32.0.1.tar.bz2 usuario@ip/nombre-servidor:/tmp/
+nextcloud-32.0.1.tar.bz2                      100%  257MB   2.1MB/s   02:03
+```
+    
 - Descomprimimos en un directorio temporal:
+```
+tar -xjf nextcloud-32.0.1.tar.bz2
+```
+
 
 ## 4. Preparación de la actualización manual
 - Movemos la instalación actual a -old:
 ```
-sudo mv /var/www/nextcloud /var/www/nextcloud_old
+sudo mv /var/www/nextcloud /var/www/nextcloud-old
 ```
 - Movemos la nueva versión a /var/www/nextcloud:
 ```
-sudo mv /var/www/nextcloud-27.x.x /var/www/nextcloud
+sudo mv /tmp/nextcloud /var/www/nextcloud
 ```
 - Copiamos la carpeta config y data de la versión anterior a la nueva:
 ```
-sudo cp -r /var/www/nextcloud_old/config /var/www/nextcloud/
-sudo cp -r /var/www/nextcloud_old/data /var/www/nextcloud/
+sudo cp -a /var/www/nextcloud-old/config /var/www/nextcloud/
+sudo cp -a /var/www/nextcloud-old/data /var/www/nextcloud/
 ```
 - Ajustamos permisos:
 ```
@@ -46,9 +55,15 @@ sudo find /var/www/nextcloud/ -type f -exec chmod 640 {} \;
 ```
 ## 5. Actualización de la base de datos y apps
 - Accedemos al actualizador desde el dashboard o usamos:
+Advertencia: Recordar: Apache debe estar detenido antes de ejecutar el updater.
 ```
-sudo -u www-data php /var/www/nextcloud/updater/updater.phar
+sudo -u www-data php /var/www/nextcloud/occ upgrade
 ```
+- Levantamos apache2
+```
+sudo systemctl start apache2
+```
+
 - Durante la actualización, Nextcloud crea versiones -old_* de las carpetas de apps si es necesario.
 - Se verifican y actualizan todas las apps instaladas.
 - Eventuales errores menores se resolvieron revisando permisos o moviendo manualmente archivos faltantes.
