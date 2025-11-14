@@ -57,7 +57,8 @@ deb-src http://deb.debian.org/debian/ bookworm-updates main non-free-firmware
 
 Ya hemos comprobado los repositorios que no vamos a necesitar tras desinstalar los paquetes que no necesito.
 Voy a usar dpkg para encontrar todos los paquetes relacionados con los programas a desinstalar.
-**wineHQ**
+
+-**wineHQ**
 
 ```bash
 dpkg -l | grep -i wine
@@ -111,7 +112,7 @@ Opcionalmente podemos limpiar un prefijo que instala wine en nuestro home
 ```bash
 rm -rf ~/.wine
 ```
-**Lutris**
+-**Lutris**
 
 Los mismos pasos para Lutris.
 
@@ -153,7 +154,7 @@ También podemos limpiar la configuración local de Lutris
 rm -rf ~/.config/lutris
 rm -rf ~/.local/share/lutris
 ```
-**Steam(APT)**
+-**Steam(APT)**
 ```bash
 dpkg -l | grep -i steam
 rc  steam-launcher                          1:1.0.0.83                          amd64        Launcher for the Steam software distribution service
