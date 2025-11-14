@@ -1,14 +1,14 @@
-#Desinstalación de paquetes apt y limpieza de repositorios no usados.
+# Desinstalación de paquetes apt y limpieza de repositorios no usados.
 **Fecha:** 2025-11-14
  
-##Descripción rápida
+## Descripción rápida
  
 Con el uso diario del sistema suelen instalarse paquetes que a la larga no se van a usar más o que solo fueron pruebas puntuales. Tener esos paquetes y sus repositorios especiales, si fue necesario añadirlos alarga el proceso del update, a veces, mostrando errores si fueron instalaciones fallidas.
 En este apunte detallaré los pasos para eliminar algunos de estos paquetes y sus dependencias, además de los repositorios que se usaron para su instalación que no pertenecían al sistema debian por efecto.
   
 ---
 
-##Comprobar repositorios existentes
+## Comprobar repositorios existentes
 
 En esta ocasión tengo claro algunos programas que quiero desinstalar: steam, lutris y wineHQ.
 Steam lo tengo instalado como flatpak y usa proton para compatibilidad con juegos .exe , por tanto no necesito ni Steam (paquete apt), Lutris o nada relacionado con wine.
@@ -53,7 +53,7 @@ deb-src http://deb.debian.org/debian/ bookworm-updates main non-free-firmware
 # For information about how to configure apt package sources,
 # see the sources.list(5) manual.
 ```
-##Eliminar paquetes
+## Eliminar paquetes
 
 Ya hemos comprobado los repositorios que no vamos a necesitar tras desinstalar los paquetes que no necesito.
 Voy a usar dpkg para encontrar todos los paquetes relacionados con los programas a desinstalar.
@@ -189,7 +189,7 @@ drwxr-xr-x 2 root root 4096 ago  6 18:31 __pycache__
 ```bash
 sudo rm -rf /usr/lib/steam/
 ```
-##Limpiar los repositorios
+## Limpiar los repositorios
 
 ```bash
 sudo rm /etc/apt/sources.list.d/winehq-bookworm.sources
