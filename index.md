@@ -1,3 +1,10 @@
+---
+title: "The BytePath Chronicles"
+layout: home  # Usa el diseño de la página principal del tema
+---
+
+
+
 # Índice de artículos técnicos y notas
 
 ## Guía del Proyecto BytePath
