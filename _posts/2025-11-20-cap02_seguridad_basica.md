@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # Capítulo 02 – Seguridad Básica
 
 ## Introducción a la Seguridad en Servidores Web

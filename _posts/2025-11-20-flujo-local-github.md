@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # Resumen del flujo entre la creación de un archivo localmente hasta subirlo a GitHub
 
 - Para verificar que todo está listo antes de empezar a trabajar

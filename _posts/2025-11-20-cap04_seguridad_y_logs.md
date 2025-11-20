@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # 🧯 Capítulo 07 – Seguridad y Logs
 
 Este capítulo es fundamental para la administración de cualquier servidor. Un buen conocimiento y práctica en la revisión de logs es la primera línea de defensa para la detección temprana de problemas, ataques o irregularidades. No solo nos ayuda a depurar, sino que también nos proporciona información vital sobre el comportamiento de nuestro sistema y aplicaciones.

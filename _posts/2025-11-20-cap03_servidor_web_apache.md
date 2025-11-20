@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # 🌐 Capítulo 03 – Servidor Web Apache
 
 En este capítulo profundizaré en la configuración de Apache2 en nuestro entorno local de pruebas.

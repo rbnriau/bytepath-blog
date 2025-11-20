@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # EL COMANDO SCP
 **Fecha:** 2025-10-24  
 **Tema:** Transferencia segura de archivos con el comando scp

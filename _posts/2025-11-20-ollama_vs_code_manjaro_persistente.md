@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # Ollama en Manjaro Persistente y VS Code (con GPU AMD)
 
 Tras los dos intentos previos (Debian 12 sin éxito, y Manjaro en Live USB con errores de espacio), se abordó una tercera estrategia: instalar **Manjaro XFCE de forma persistente en un pendrive de 32 GB**, utilizándolo como un disco duro real para ejecutar modelos LLM con **aceleración GPU** en local.

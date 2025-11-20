@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # Integrar Ollama y Modelos LLM en VS Code (con GPU AMD)
 
 En la era actual de la inteligencia artificial, integrar grandes modelos de lenguaje (LLM) directamente en el entorno de desarrollo es una capacidad cada vez más deseada. Herramientas como Ollama permiten ejecutar estos modelos de forma local, aprovechando la potencia de nuestras GPU. Sin embargo, la implementación de esta solución no siempre es un camino de rosas, especialmente cuando se trabaja con hardware AMD y distribuciones Linux específicas. Este artículo documenta los desafíos encontrados al intentar integrar Ollama y un LLM para asistencia en la codificación en VS Code, utilizando una GPU AMD Radeon RX Vega 56, en dos entornos Linux diferentes: Debian 12 y Manjaro Live USB.

@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # Desinstalación de paquetes apt y limpieza de repositorios no usados.
 **Fecha:** 2025-11-14
  

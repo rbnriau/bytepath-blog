@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # Cambiar fuente de TTY en sistemas RHEL
 **Fecha:** 2025-10-14  
 **Tema:** 

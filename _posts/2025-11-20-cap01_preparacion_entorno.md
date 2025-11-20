@@ -1,3 +1,9 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
+
+
 # Capítulo 01 – Preparación del Entorno
 
 ## Estructura del directorio del proyecto local

@@ -1,3 +1,7 @@
+---
+title: "Título del artículo"
+date: 2025-11-20
+---
 # Uso de pv para comprimir
 
 **Fecha:** 20-10-2025
