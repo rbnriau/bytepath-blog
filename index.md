@@ -1,6 +1,5 @@
 ---
-title: "The BytePath Chronicles"
-layout: home  # Usa el diseño de la página principal del tema
+
 ---
 
 
