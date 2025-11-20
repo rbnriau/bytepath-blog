@@ -1,5 +1,5 @@
 title: The BytePath Chronicles
 description: Blog técnico de mis apuntes
-theme: minima
+theme: jekyll-theme-hacker
 baseurl: /bytepath-blog  # Importante si tu repositorio no es <usuario>.github.io
 
