@@ -1,3 +1,10 @@
+---
+title: "Actualización de Nextcloud en Debian12"  # Si no hay # Título en el contenido
+date: 2025-11-20 12:00:00 +0100  # Fecha explícita
+categories: [tecnología]  # Para agrupar artículos
+tags: [linux, apache, nextcloud]     # Para etiquetas
+---
+
 # Actualización de Nextcloud en VPS Debian 12
 ## 1. Copias de seguridad
 Antes de cualquier cambio, realizamos backups completos:
