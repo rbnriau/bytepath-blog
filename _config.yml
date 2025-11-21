@@ -1,6 +1,8 @@
 title: The BytePath Chronicles
 description: Blog técnico de mis apuntes
-theme: jekyll-theme-hacker
+remote_theme: pages-themes/hacker@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
 baseurl: /bytepath-blog  # Importante si tu repositorio no es <usuario>.github.io
 
 
